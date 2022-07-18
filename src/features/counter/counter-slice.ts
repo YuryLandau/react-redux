@@ -17,10 +17,10 @@ const counterSlice = createSlice({ //Reducer logic
     initialState, //reducer inicial state
     reducers: { // Defines the diferent logic and updates we gonna have inside this reducer.
 
-        incremented(state){ //Redux toolkit uses a lib called "inmer", that allows to mutate our initial state.
+        incremented(state){ //Redux toolkit uses a lib called "inmer", that allows to mutate our initial state, without the need to use actual react state management techniques.
             state.value++;
         },
-        decrement(state){ //Redux toolkit uses a lib called "inmer", that allows to mutate our initial state.
+        decrement(state){ 
             state.value--;
         }
     }

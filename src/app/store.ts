@@ -1,9 +1,14 @@
 import { 
-    configureStore //Wrapper around the basic Redux createStore() function. It takes your reducer, makes a store. It also has some basic tools for to not seattle things by hand, like automaticaly turns on the ReduxDevTools extension, and other things. In general, helps to avoid mistakes during developmento.
+    configureStore //Wrapper around the basic Redux createStore() function. It takes your reducer, makes a store. It also has some basic tools for to not seattle things by hand, like automaticaly turns on the ReduxDevTools extension, and other things. In general, helps to avoid mistakes during development.
+                //Automaticaly adds the "ThunkMiddleware"
+                //Automaticaly turns on development checks, catching accidental mutations, per exemple.
 } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counter-slice";
 
-export const store = configureStore({ //Can mix reducers automaticaly if passed a reducer object:
+export const store = configureStore({ 
+    //Can mix reducers automaticaly if passed a reducer object:
+    //Usualy takes a bunch of reducers functions, but we have created them in "conterReducer", the ones we are importing.
+    
     reducer: {
         counter: counterReducer, //After imported in other module, you can use "state.counterReducer" field.
     }
