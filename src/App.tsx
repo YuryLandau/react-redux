@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { incremented } from './features/counter/counter-slice';
+import { incremented, addingMore } from './features/counter/counter-slice';
 import { useAppSelector, useAppDispatch } from './app/hooks';
 
 
@@ -12,7 +12,12 @@ function App() {
   const dispatch = useAppDispatch();
 
   function handleClick(){
-    dispatch(incremented())
+
+    //Increment by a chosen amount.
+    dispatch(addingMore(2))//Action with payload field
+
+    // Increment by 1.
+    // dispatch(incremented())//Action with no payload field
   }
 
   return (
