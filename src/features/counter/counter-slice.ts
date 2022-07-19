@@ -9,7 +9,7 @@ interface CounterState { //Type of the state
 }
 
 const initialState: CounterState = { //Inicial State
-    value: 0,
+    value: 5,
 }
 
 const counterSlice = createSlice({ //Reducer logic
@@ -17,11 +17,9 @@ const counterSlice = createSlice({ //Reducer logic
     initialState, //reducer inicial state
     reducers: { // Defines the diferent logic and updates we gonna have inside this reducer.
 
+        //Our Actions
         incremented(state){ //Redux toolkit uses a lib called "inmer", that allows to mutate our initial state, without the need to use actual react state management techniques.
             state.value++;
-        },
-        decrement(state){ 
-            state.value--;
         }
     }
 })
