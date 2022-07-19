@@ -9,9 +9,9 @@ export const store = configureStore({
     //Can mix reducers automaticaly if passed a reducer object:
     //Usualy takes a bunch of reducers functions, but we have created them in "conterReducer", the ones we are importing.
     
-    reducer: {
+    reducer: { //Automaticaly calls "combine reducers".
         counter: counterReducer, //After imported in other module, you can use "state.counterReducer" field.
-    }
+    } //With that, we end up with a "state.counter" field in o.
 });
 
 export type AppDispatch = typeof store.dispatch; //Gets dispatch function and return it's type.

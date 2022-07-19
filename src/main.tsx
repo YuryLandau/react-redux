@@ -7,7 +7,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store}> {/* It needs to envolve all the application, so every component can access the store */}
 
       <App />
     </Provider>
